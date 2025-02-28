@@ -1,0 +1,868 @@
+html, body {
+    margin: 0;
+    font-family: sans-serif;
+    overflow-x: hidden;
+}
+::-moz-selection {
+    background-color: #cecece;
+}
+::selection {
+    background-color: #cecece;
+}
+
+@font-face {
+    font-family: Hacked;
+    src: url(https://hackedfont.com/HACKED.ttf);
+}
+@font-face {
+    font-family: PixelOperatorBold;
+    src: url(font/PixelOperatorMono-Bold.ttf);
+}
+@font-face {
+    font-family: PixelOperator;
+    src: url(font/PixelOperatorMono.ttf);
+}
+
+a, button, [type="submit"], .clickable{
+    cursor: url(fuck_cursor.cur), pointer;
+}
+
+/* HEADER */
+body>header, main {
+    position: relative;
+    padding: 2.5vw;
+}
+body>header{
+    height: 80vh;
+    background-color: #F5FAFC;
+    border: 2.5vw solid white;
+    margin-bottom: -6vw;
+    z-index: 3;
+}
+body>header>h2,body>header>h1{
+    position: relative;
+    z-index: 9;
+}
+body>header>h2{
+    margin: 0;
+    margin-top: 10vh;
+    text-align: center;
+    font-family: PixelOperatorBold, monospace;
+    font-size: 4.5em;
+    font-style: italic;
+    text-transform: uppercase;
+}
+body>header>h2>strong{
+    display: inline-block;
+    line-height: 60px;
+    padding: 0 5px;
+    margin: 0 -5px;
+    background-color: black;
+    color: white;
+    font-style: initial;
+}
+@media screen and (max-width: 770px) {
+    body>header>h2{
+        font-size: 3em;
+    }
+    body>header>h2>strong{
+        line-height: 40px;
+    }
+}
+@media screen and (max-width: 520px) {
+    body>header>h2{
+        font-size: 2em;
+        margin-top: 5vh;
+    }
+    body>header>h2>strong{
+        line-height: 30px;
+    }
+}
+
+#headervideo{
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    height: 100%;
+    background-image: url(img/pattern_grey.jpg);
+    font-family: Hacked, sans-serif;
+    z-index: 1;
+    overflow: hidden;
+}
+#headervideo>div{
+    position: relative;
+    height: 100%;
+    mix-blend-mode: lighten;
+    background-color: #F5FAFC;
+    font-size: 4em;
+}
+#headervideo>div>span{
+    position: absolute;
+    bottom: 0;
+    opacity: 0.7;
+    text-shadow: -10px 10px 2px #efefef;
+}
+#headervideo>div>span:nth-child(1){
+    left: 5%;
+    font-size: 30vw;
+}
+#headervideo>div>span:nth-child(2){
+    left: 30%;
+    font-size: 20vw;
+}
+#headervideo>div>span:nth-child(3){
+    left: 55%;
+    font-size: 15vw;
+}
+#headervideo>div>span:nth-child(4){
+    right: 5%;
+    font-size: 35vw;
+}
+@media screen and (max-width: 770px) {
+    body>header{
+        height: 70vh;
+    }
+    #headervideo>div>span:nth-child(1){
+        left: 0%;
+        font-size: 50vw;
+    }
+    #headervideo>div>span:nth-child(2){
+        left: 40%;
+        font-size: 30vw;
+        margin-bottom: 0;
+    }
+    #headervideo>div>span:nth-child(3){
+        left: auto;
+        right: 0%;
+        font-size: 60vw;
+    }
+    #headervideo>div>span:nth-child(4){
+        display: none
+    }
+}
+@media screen and (max-width: 520px) {
+    body>header{
+        height: 60vh;
+    }
+}
+#headervideo>div>img{
+    position: absolute;
+    margin: 0 -15%;
+    top: 0;
+    left: 50%;
+    width: 30%;
+    opacity: 0.2;
+}
+#headervideo>iframe{
+    position: absolute;
+    top: 0;
+    min-height: 100%;
+    min-width: 100%;
+}
+
+/* GENERAL */
+h1{
+    margin: 0;
+    margin-top: 2vh;
+    text-align: center;
+    font-family: Hacked, sans-serif;
+    font-size: 6em;
+    font-weight: normal;
+}
+@media screen and (max-width: 770px) {
+    h1{
+        font-size: 4em;
+    }
+}
+@media screen and (max-width: 520px) {
+    h1{
+        font-size: 2em;
+    }
+}
+
+main {
+    background-color: black;
+    color: white;
+    padding-bottom: 0;
+    z-index: 10;
+}
+main>*{
+    position: relative;
+    z-index: 10;
+}
+h2{
+    font-family: PixelOperatorBold;
+    margin-left: 2.5vw;
+}
+
+
+#whiteborder::before,#whiteborder::after{
+    content: "";
+    position: fixed;
+    width: 2.5vw;
+    top: 0;
+    bottom: 0;
+    background-color: rgba(255,255,255,0.1);
+    z-index: 20;
+}
+#whiteborder::before{
+    left: 0;
+}
+#whiteborder::after{
+    right: 0;
+}
+#svg_v{
+    position: absolute;
+    bottom: 100%;
+    left: 0;
+    right: 0;
+    width: 100%;
+    margin-bottom: -1px;
+    z-index: 5;
+    overflow: visible;
+}
+
+
+article>h2{
+    display: inline-block;
+    background-color: black;
+}
+article>h2::after{
+    content: "_";
+    color: black;
+}
+article:hover>h2::after{
+    color: white;
+    animation-name: underscoreBlink;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+}
+@keyframes underscoreBlink {
+    0% {color: white;}
+    50% {color: white;}
+    51% {color: black;}
+    100% {color: black;}
+}
+
+
+/*1 OVERVIEW */
+article:nth-of-type(1){
+    margin-bottom: 50px;
+}
+article:nth-of-type(1)>p{
+    text-align: center;
+}
+article:nth-of-type(1) img {
+    max-width: 100%;
+}
+article:nth-of-type(1)>#testfontform{
+    margin: 0 2.5vw;
+}
+article:nth-of-type(1)>#testfontform>input{
+    display: block;
+    width: 100%;
+    font-family: Hacked;
+    font-size: 5em;
+    text-align: center;
+    background: none;
+    border: none;
+    outline: none;
+    color: rgba(255,255,255,0.9);
+}
+#console {
+    position: absolute;
+    top: 50px;
+    left: 2.5vw;
+    opacity: 0.2;
+}
+
+/*2 VR */
+article:nth-of-type(2){
+    overflow: hidden;
+    padding-bottom: 130px;
+    padding-top: 50px;
+}
+article:nth-of-type(2)>div{
+    position: relative;
+    height: 600px;
+    padding: 20px;
+    white-space: nowrap;
+    background-image: url(img/blacknoise_background.jpg);
+    border: 7px dashed black;
+}
+article:nth-of-type(2)>div .ui-dialog {
+    display: inline-block!important;
+    position: relative;
+    top: 0!important;
+    left: 0!important;
+    margin: 0;
+    margin-right: -490px;
+    white-space: normal;
+    z-index: 15!important;
+}
+
+#screamer_vr{
+    position: absolute;
+    right: -5%;
+    bottom: 0;
+    width: 105%;
+    height: 110%;
+    background-image: url(img/screamer_vr.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: bottom right;
+}
+
+#ghost_vr{
+    position: absolute;
+    left: 0;
+    top: 10%;
+    width: 70%;
+    height: 60%;
+    background-image: url(img/ghost_vr_experience.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+
+@media screen and (max-width: 1440px) {
+    #ghost_vr {
+        width: 50%;
+    }
+}
+@media screen and (max-width: 1240px) {
+    #ghost_vr {
+        width: 30%;
+    }
+}
+@media screen and (max-width: 1000px) {
+    #screamer_vr {
+        display: none;
+    }
+    #ghost_vr {
+        width: 100%;
+        top: 20px;
+    }
+}
+
+#chatter_teeth_vr {
+    position: absolute;
+    left: 0;
+    bottom: -7%;
+    width: 30%;
+    height: 50%;
+    background-image: url(img/CHATTER_TEETH_btn.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: bottom left;
+    -webkit-filter: grayscale(1);
+    filter: grayscale(1);
+    -webkit-transition: all 0.05s ease-in-out;
+    -moz-transition: all 0.05s ease-in-out;
+    -ms-transition: all 0.05s ease-in-out;
+    -o-transition: all 0.05s ease-in-out;
+    transition: all 0.05s ease-in-out;
+}
+#chatter_teeth_vr:hover{
+    -webkit-filter: grayscale(0);
+    filter: grayscale(0);
+    transform: scale(1.02);
+    cursor: url(fuck_cursor.cur),url(fuck_cursor.png), pointer!important;
+    -webkit-transition: all 0.2s ease;
+    -moz-transition: all 0.2s ease;
+    -ms-transition: all 0.2s ease;
+    -o-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+}
+@media screen and (max-width: 1000px) {
+    #chatter_teeth_vr {
+        width: 100%;
+    }
+}
+
+
+/*3 COMPARATOR */
+
+article:nth-of-type(3){
+    position: relative;
+    background-image: url(img/pattern_white.jpg);
+    margin-bottom: 20px;
+}
+article:nth-of-type(3)::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100px;
+    background-image: url(img/paper-cut-1.png);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    z-index: 10;
+}
+article:nth-of-type(3)::after{
+    content: "";
+    position: absolute;
+    top: 99.5%;
+    left: 0;
+    right: 0;
+    height: 426px;
+    background-image: url(img/blue_pixelgradient.png);
+    background-repeat: repeat-x;
+    z-index: 10;
+}
+
+article:nth-of-type(3)>h2{
+    position: relative;
+    top: 80px;
+    z-index: 15;
+}
+
+article:nth-of-type(3)>header{
+    position: relative;
+    padding: 0 2.5vw;
+    padding-top: 150px;
+    padding-bottom: 45px;
+    margin-top: -50px;
+    /*border-bottom: 10px dashed #F5FAFC;*/
+    text-align: center;
+    background-image: url(img/SCREAMER_11.png);
+    background-repeat: no-repeat;
+    background-position: 50% 0;
+}
+article:nth-of-type(3)>header::before,article:nth-of-type(3)>header>span{
+    position: absolute;
+    bottom: -40px;
+    font-family: PixelOperatorBold;
+    font-size: 12em;
+    opacity: 0.5;
+    z-index: 9;
+}
+article:nth-of-type(3)>header::before{
+    content: "Scanner";
+    left: -10px;
+}
+article:nth-of-type(3)>header>span{
+    right: -10px;
+}
+
+article:nth-of-type(3)>header>h3 {
+    position: relative;
+    display: inline-block;
+    margin: 0;
+    font-family: PixelOperatorBold;
+    font-size: 2em;
+    color: black;
+    background-color: white;
+    z-index: 11;
+}
+@media screen and (min-width: 1749px) {/*notMobile*/
+    article:nth-of-type(3)>header>br{
+        display: none;
+    }
+}
+@media screen and (max-width: 1749px) {/*Mobile*/
+    article:nth-of-type(3) > header > h3, article:nth-of-type(3) > header > img {
+        margin: 2px 0!important;
+    }
+    #comparator>div:nth-of-type(2)>span>img{
+        display: none;
+    }
+    article:nth-of-type(3)>header::before,article:nth-of-type(3)>header>span{
+        font-size: 10em;
+    }
+}
+article:nth-of-type(3)>header>img {
+    position: relative;
+    height: 100px;
+    margin: -40px 10px;
+    z-index: 11;
+}
+
+#comparator{
+    position: relative;
+    width: 100%;
+    /*font-size: 0;*/
+    text-align: center;
+    background-color: #12cffe;
+    overflow: hidden;
+    z-index: 9;
+}
+#comparator>div{
+    position: relative;
+    display: inline-block;
+}
+#comparator>div>h3{
+    margin: 1vh 0;
+}
+#comparator>div>img{
+    width: 100%;
+    min-width: max-content;
+    max-width: fit-content;
+}
+#comparator>div>span{
+    display: inline-block;
+    position: absolute;
+    width: 30px;
+    height: 100%;
+    background-color: white;/*<-blue #0fbeff invert*/ /*rgba(255,255,255,0.9);*/
+    background-repeat: no-repeat;
+    /*-webkit-box-shadow: 0 0 10px 0 rgba(255,255,255,0.5);
+    box-shadow: 0 0 10px 0 rgba(255,255,255,0.5);*/
+    cursor: ew-resize;
+    -webkit-filter: invert(1);
+   filter: invert(1);
+}
+#comparator>div:nth-child(1)>span{
+    background-image: url(img/Watch_Dogs_logo_font.png);
+}
+#comparator>div:nth-child(2)>span{
+    background-image: url(img/Watch_Dogs_logo_original.png);
+}
+#comparator>div>span>img{
+    position: absolute;
+    bottom: 2px;
+    left: -20%;
+    right: 20%;
+    width: 140%;
+    overflow: visible;
+    -webkit-box-shadow: 0 -10px 10px -10px #12cffe;
+    box-shadow: 0 -10px 10px -10px #12cffe;
+}
+
+/*4 REUSES*/
+
+article:nth-of-type(4){
+    margin-bottom: 100px;
+}
+article:nth-of-type(4)>div{
+    display: flex;
+}
+
+article:nth-of-type(4)>div>div:first-of-type{
+    width: 500px;
+    padding-left: 2.5vw;
+}
+.twitter-tweet{
+    display: inline-block!important;
+}
+article:nth-of-type(4)>div>div:first-of-type>div>blockquote{
+    display: inline-block;
+    padding: 20px;
+    margin: 10px 0;
+    text-align: left;
+    background-color: white;
+    color: black;
+    border-radius: 5px;
+}
+article:nth-of-type(4)>div>div:first-of-type>div>blockquote>p{
+    margin: 0;
+    margin-bottom: 10px;
+}
+article:nth-of-type(4)>div>div:first-of-type>div>blockquote a{
+    color: #0fbeff;
+    text-decoration: none;
+}
+article:nth-of-type(4)>div>div:first-of-type>div>blockquote a:hover{
+    color: rgb(59, 148, 217);
+}
+ 
+article:nth-of-type(4)>div>div:nth-of-type(2){
+    padding-left: 2.5vw;
+    width: 100%;
+}
+article:nth-of-type(4)>div>div:nth-of-type(2)>a {
+    display: inline-block;
+    margin: 10px 0;
+    margin-right: 15px;
+    background-color: white;
+    color: black;
+    border: 1px solid rgba(204, 214, 221, 0.74902);
+    border-radius: 5px;
+    text-decoration: none;
+    overflow: hidden;
+}
+article:nth-of-type(4)>div>div:nth-of-type(2)>a>header{
+    position: relative;
+    height: 100px;
+    padding: 20px;
+    background-position: center left;
+}
+article:nth-of-type(4)>div>div:nth-of-type(2)>a>header>h3{
+    position: absolute;
+    bottom: 0;
+    padding: 10px;
+    background-color: white;
+}
+article:nth-of-type(4)>div>div:nth-of-type(2)>a>footer{
+    padding: 20px;
+    font-style: italic;
+    color: #0fbeff;
+}
+article:nth-of-type(4)>div>div:nth-of-type(2)>a:hover>footer{
+    text-decoration: underline;
+}
+@media screen and (max-width: 770px) {
+    article:nth-of-type(4)>div{
+        display: block;
+    }
+    article:nth-of-type(4)>div>div:first-of-type,article:nth-of-type(4)>div>div:nth-of-type(2){
+        width: 100%;
+        padding: 0;
+    }
+    article:nth-of-type(4)>div>div:first-of-type>*,article:nth-of-type(4)>div>div:nth-of-type(2)>*{
+        display: block!important;
+        width: 100%!important;
+        max-width: 500px!important;
+        margin: auto!important;
+    }
+    article:nth-of-type(4)>div>div:nth-of-type(2)>*{
+        margin: 10px auto!important;
+    }
+}
+
+
+
+/*5 DOWNLOAD */
+
+article:nth-of-type(5){
+    overflow: hidden;
+}
+article:nth-of-type(5)>p{
+    position: relative;
+    text-align: center;
+    font-family: PixelOperatorBold;
+    font-size: 2em;
+    font-weight: bold;
+    color: #c83cff;
+    margin: 0;
+    margin-bottom: 50px;
+}
+article:nth-of-type(5)>p>strong{
+    position: relative;
+    background: rgba(0,0,0,0.2);
+    z-index: 10;
+}
+article:nth-of-type(5)>p>img{
+    position: absolute;
+    top: -120px;
+    left: 50%;
+    right: 50%;
+    margin: 0 -200px;
+    opacity: 0.6;
+    z-index: 1;
+}
+
+#download{
+    position: relative;
+    height: 50px;
+    padding: 20px;
+    text-align: center;
+    overflow: hidden;
+    z-index: 10;
+}
+
+#download::after, #download::before {
+    position: absolute;
+    width: 30%;
+    height: 100%;
+    top: 0;
+    z-index: 9;
+}
+#download::after{
+    content: "";
+    right: 0;
+    background: -moz-linear-gradient(left,  rgba(0,0,0,0) 0%, rgba(0,0,0,1) 100%);
+    background: -webkit-linear-gradient(left,  rgba(0,0,0,0) 0%,rgba(0,0,0,1) 100%);
+    background: linear-gradient(to right,  rgba(0,0,0,0) 0%,rgba(0,0,0,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#000000',GradientType=1 );
+}
+#download::before{
+    content: "";
+    left: 0;
+    background: -moz-linear-gradient(left,  rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%);
+    background: -webkit-linear-gradient(left,  rgba(0,0,0,1) 0%,rgba(0,0,0,0) 100%);
+    background: linear-gradient(to right,  rgba(0,0,0,1) 0%,rgba(0,0,0,0) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#00000000',GradientType=1 );
+}
+@media screen and (max-width: 700px) {
+    #download::after, #download::before {
+        width: 10%;
+    }
+}
+
+#download>button{
+    position: relative;
+    border: 0;
+    background: none;
+    font-family: PixelOperator;
+    text-align: center;
+    outline: none;
+    font-size: 1.2em;
+}
+
+#download>button>strong{
+    position: relative;
+    padding: 10px;
+    border: 5px solid white;
+    background: black;
+    color: white;
+    font-family: PixelOperatorBold;
+    font-size: 2em;
+}
+#download>button:hover>strong{
+    border-color: #c83cff;
+    color: #c83cff;
+}
+#download>button:active>strong{
+    background-color: #c83cff;
+    border-color: #c83cff;
+    color: black;
+}
+
+#download>button::before,#download>button::after{
+    position: absolute;
+    margin-top: -10px;
+    font-size: 7em;
+    letter-spacing: -30px;
+    color: white;
+    opacity: 0.8;
+}
+#download>button::before {
+    content: ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>";
+    right: 100%;
+    top: -100%;
+}
+#download>button::after{
+    content: "<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<";
+    left: 100%;
+    top: -100%;
+    margin-left: -20px;
+}
+#download>button:active::before,#download>button:active::after{
+    color:  #12cffe;
+}
+
+
+/*6 CREATE */
+
+article:nth-of-type(6)>p{
+    font-family: monospace;
+    padding: 0 2.5vw;
+    font-size: 20px;
+    text-align: center;
+}
+article:nth-of-type(6)>p>a{
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+article:nth-of-type(6)>p>a:hover{
+    text-decoration: underline;
+}
+article:nth-of-type(6)>p img{
+    margin: -10px 5px;
+}
+article:nth-of-type(6)>p>strong{
+    color: #ff1065;
+}
+
+/*7 SHARE */
+
+article:nth-of-type(7){
+    padding-top: 50px;
+    padding-bottom: 150px;
+    margin-top: 50px;
+    overflow: hidden;
+    background-image: url(img/I_AM_DEDSEC.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+
+article:nth-of-type(7)>p{
+    text-align: center;
+    margin: 0;
+    font-size: 10vh;
+    font-family: PixelOperatorBold;
+}
+article:nth-of-type(7)>p::before{
+    content: "#";
+    opacity: 0.8;
+}
+article:nth-of-type(7)>p>a{
+    position: relative;
+    color: white;
+    text-decoration: none;
+}
+article:nth-of-type(7)>p>a:hover{
+    text-decoration: underline;
+}
+article:nth-of-type(7)>p>a>img:first-of-type{
+    position: relative;
+    top: 1vh;
+    margin-left: 50px;
+    height: 8vh;
+    animation-name: twroll;
+    animation-duration: 1.5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    z-index: 9;
+}
+article:nth-of-type(7)>p>a:hover>img:first-of-type{
+    animation-duration: 0.5s;
+}
+@keyframes twroll {/* not "troll" */
+    from {transform: rotate(0deg);}
+    to {transform: rotate(360deg);}
+}
+article:nth-of-type(7)>p>a>img:last-of-type{
+    position: absolute;
+    right: -10%;
+    top: -50%;
+    width: 70%;
+    opacity: 0.9;
+    z-index: 1;
+}
+@media screen and (max-width: 550px) {
+    article:nth-of-type(7)>p>a>img{
+        display: none;
+    }
+}
+
+
+/* FOOTER */
+body>footer{
+    padding: 20px 2.5vw;
+    position: relative;
+    z-index: 60;
+    background: #191919;
+}
+body>footer>p>span{
+    display: inline-block;
+    color: white;
+    padding: 5px;
+    font-family: monospace;
+}
+body>footer a{
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+body>footer a:hover{
+    text-decoration: underline;
+}
+
+#playWatchDogs{
+    float: right;
+    padding: 10px;
+    margin: -8px 0;
+    font-family: PixelOperatorBold;
+    background: black;
+    color: white;
+    border: 4px solid #c83cff;
+}
+#playWatchDogs:hover{
+    text-decoration: none;
+}
